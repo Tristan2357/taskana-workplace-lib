@@ -1,6 +1,4 @@
-* {
-  font-family: 'Roboto', sans-serif;
-}
+@import '../../main.css';
 
 :host {
   display: block;

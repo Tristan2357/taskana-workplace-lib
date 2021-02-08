@@ -5,7 +5,18 @@
  * It contains typing information for all components that exist in this project.
  */
 import { HTMLStencilElement, JSXBase } from "@stencil/core/internal";
+import { Task } from "./models/task";
 export namespace Components {
+    interface TaskList {
+        "selectedId": string;
+        "tasks": Task[];
+    }
+    interface TaskOpenApplication {
+        "link": string;
+    }
+    interface TaskOpenButtonbar {
+        "task": Task;
+    }
     interface TaskOpenDescription {
         /**
           * The Description of the Task
@@ -22,6 +33,24 @@ export namespace Components {
     }
 }
 declare global {
+    interface HTMLTaskListElement extends Components.TaskList, HTMLStencilElement {
+    }
+    var HTMLTaskListElement: {
+        prototype: HTMLTaskListElement;
+        new (): HTMLTaskListElement;
+    };
+    interface HTMLTaskOpenApplicationElement extends Components.TaskOpenApplication, HTMLStencilElement {
+    }
+    var HTMLTaskOpenApplicationElement: {
+        prototype: HTMLTaskOpenApplicationElement;
+        new (): HTMLTaskOpenApplicationElement;
+    };
+    interface HTMLTaskOpenButtonbarElement extends Components.TaskOpenButtonbar, HTMLStencilElement {
+    }
+    var HTMLTaskOpenButtonbarElement: {
+        prototype: HTMLTaskOpenButtonbarElement;
+        new (): HTMLTaskOpenButtonbarElement;
+    };
     interface HTMLTaskOpenDescriptionElement extends Components.TaskOpenDescription, HTMLStencilElement {
     }
     var HTMLTaskOpenDescriptionElement: {
@@ -29,10 +58,24 @@ declare global {
         new (): HTMLTaskOpenDescriptionElement;
     };
     interface HTMLElementTagNameMap {
+        "task-list": HTMLTaskListElement;
+        "task-open-application": HTMLTaskOpenApplicationElement;
+        "task-open-buttonbar": HTMLTaskOpenButtonbarElement;
         "task-open-description": HTMLTaskOpenDescriptionElement;
     }
 }
 declare namespace LocalJSX {
+    interface TaskList {
+        "onSelectedIdChange"?: (event: CustomEvent<any>) => void;
+        "selectedId"?: string;
+        "tasks"?: Task[];
+    }
+    interface TaskOpenApplication {
+        "link"?: string;
+    }
+    interface TaskOpenButtonbar {
+        "task"?: Task;
+    }
     interface TaskOpenDescription {
         /**
           * The Description of the Task
@@ -48,6 +91,9 @@ declare namespace LocalJSX {
         "note"?: string;
     }
     interface IntrinsicElements {
+        "task-list": TaskList;
+        "task-open-application": TaskOpenApplication;
+        "task-open-buttonbar": TaskOpenButtonbar;
         "task-open-description": TaskOpenDescription;
     }
 }
@@ -55,6 +101,9 @@ export { LocalJSX as JSX };
 declare module "@stencil/core" {
     export namespace JSX {
         interface IntrinsicElements {
+            "task-list": LocalJSX.TaskList & JSXBase.HTMLAttributes<HTMLTaskListElement>;
+            "task-open-application": LocalJSX.TaskOpenApplication & JSXBase.HTMLAttributes<HTMLTaskOpenApplicationElement>;
+            "task-open-buttonbar": LocalJSX.TaskOpenButtonbar & JSXBase.HTMLAttributes<HTMLTaskOpenButtonbarElement>;
             "task-open-description": LocalJSX.TaskOpenDescription & JSXBase.HTMLAttributes<HTMLTaskOpenDescriptionElement>;
         }
     }

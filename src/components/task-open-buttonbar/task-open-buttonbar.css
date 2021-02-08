@@ -1,3 +1,41 @@
-:host {
-  display: block;
+@import '../../main.css';
+
+.btn {
+  vertical-align: baseline;
+  text-align: center;
+  margin: 0 2px;
+  min-width: 64px;
+  line-height: 36px;
+  padding: 0 16px;
+  border-radius: 4px;
+  border: 1px solid rgba(0, 0, 0, 0.12);
+  font-size: 100%;
+  background-color: white;
+  color: black;
+}
+
+.btn.primary {
+  background-color: #22a39f;
+  color: #fff;
+  border: none;
+}
+
+.btn > span {
+  margin: 0 0 2px 6px;
+  vertical-align: middle;
+}
+
+.flex {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+h4 {
+  font-size: 1.5rem;
+  font-weight: 500;
+  letter-spacing: normal;
+  margin-left: 0.25rem;
+  margin-block-start: 0;
+  margin-block-end: 0;
 }
