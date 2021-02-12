@@ -1,3 +1,21 @@
-:host {
-  display: block;
+@import "../../main.css";
+
+.btn > span.caret {
+  margin: 0;
+  vertical-align: auto;
+}
+
+.btn > img {
+  vertical-align: text-bottom;
+}
+
+.right {
+  align-self: flex-end;
+}
+
+.flex > * {
+  margin: 0 4px;
+}
+.flex > * > button {
+  margin: 0 8px 0 0;
 }

@@ -1,4 +1,4 @@
-import { Component, Host, h } from '@stencil/core';
+import { Component, h } from '@stencil/core';
 
 @Component({
   tag: 'task-search',
@@ -8,11 +8,16 @@ import { Component, Host, h } from '@stencil/core';
 export class TaskSearch {
 
   render() {
-    return (
-      <Host>
-        <slot></slot>
-      </Host>
-    );
+    return <div class='flex'>
+      <div>
+        <button class='btn'>
+          <span class='material-icons caret'>keyboard_arrow_down</span>
+        </button>
+        <input />
+      </div>
+      <button class='btn right'>
+        <img src='../../assets/wb-empty.svg' width='20' height='20' alt='' />
+      </button>
+    </div>;
   }
-
 }

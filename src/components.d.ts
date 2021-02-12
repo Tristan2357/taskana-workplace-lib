@@ -33,6 +33,8 @@ export namespace Components {
          */
         "note": string;
     }
+    interface TaskSearch {
+    }
 }
 declare global {
     interface HTMLTaskListElement extends Components.TaskList, HTMLStencilElement {
@@ -59,11 +61,18 @@ declare global {
         prototype: HTMLTaskOpenDescriptionElement;
         new (): HTMLTaskOpenDescriptionElement;
     };
+    interface HTMLTaskSearchElement extends Components.TaskSearch, HTMLStencilElement {
+    }
+    var HTMLTaskSearchElement: {
+        prototype: HTMLTaskSearchElement;
+        new (): HTMLTaskSearchElement;
+    };
     interface HTMLElementTagNameMap {
         "task-list": HTMLTaskListElement;
         "task-open-application": HTMLTaskOpenApplicationElement;
         "task-open-buttonbar": HTMLTaskOpenButtonbarElement;
         "task-open-description": HTMLTaskOpenDescriptionElement;
+        "task-search": HTMLTaskSearchElement;
     }
 }
 declare namespace LocalJSX {
@@ -96,11 +105,14 @@ declare namespace LocalJSX {
          */
         "note"?: string;
     }
+    interface TaskSearch {
+    }
     interface IntrinsicElements {
         "task-list": TaskList;
         "task-open-application": TaskOpenApplication;
         "task-open-buttonbar": TaskOpenButtonbar;
         "task-open-description": TaskOpenDescription;
+        "task-search": TaskSearch;
     }
 }
 export { LocalJSX as JSX };
@@ -111,6 +123,7 @@ declare module "@stencil/core" {
             "task-open-application": LocalJSX.TaskOpenApplication & JSXBase.HTMLAttributes<HTMLTaskOpenApplicationElement>;
             "task-open-buttonbar": LocalJSX.TaskOpenButtonbar & JSXBase.HTMLAttributes<HTMLTaskOpenButtonbarElement>;
             "task-open-description": LocalJSX.TaskOpenDescription & JSXBase.HTMLAttributes<HTMLTaskOpenDescriptionElement>;
+            "task-search": LocalJSX.TaskSearch & JSXBase.HTMLAttributes<HTMLTaskSearchElement>;
         }
     }
 }

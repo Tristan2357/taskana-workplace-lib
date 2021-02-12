@@ -1,28 +1,5 @@
 @import '../../main.css';
 
-:host {
-  display: block;
-}
-
 input, textarea {
   width: 100%;
-  padding: 12px 20px;
-  margin: 8px 0;
-  border: 1px solid #ced4da;
-  box-sizing: border-box;
-  border-radius: 4px;
-  transition: border-color .15s ease-in-out,box-shadow .15s ease-in-out;
-}
-
-[disabled] {
-  background-color: #e9ecef;
-  opacity: 1;
-}
-
-input[type=text]:focus, textarea:focus {
-  color: #495057;
-  background-color: #fff;
-  border-color: #80bdff;
-  outline: 0;
-  box-shadow: 0 0 0 0.2rem rgba(0,123,255,.25);
 }
