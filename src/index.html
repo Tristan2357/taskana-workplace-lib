@@ -9,12 +9,21 @@
   <script type='module' src='/build/taskana-workplace.esm.js'></script>
   <script nomodule src='/build/taskana-workplace.js'></script>
   <!--Needed as external dependency-->
-  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <link href='https://fonts.googleapis.com/icon?family=Material+Icons' rel='stylesheet'>
 </head>
 <body>
-<task-open-buttonbar></task-open-buttonbar>
-<task-list></task-list>
-<task-open-description></task-open-description>
-<task-open-application></task-open-application>
+<div style='display: flex; width: 100%'>
+  <div style='flex: 0 0 50%; padding: 8px; border: 2px solid black; margin: 4px'>
+    <task-open-buttonbar></task-open-buttonbar>
+  </div>
+</div>
+<div style='display: flex; width: 100%'>
+  <div style='flex: 0 0 50%; padding: 8px; border: 2px solid black; margin: 4px'>
+    <task-open-description></task-open-description>
+  </div>
+  <div style='flex: 0 0 30%; padding: 8px; border: 2px solid black; margin: 4px'>
+    <task-list></task-list>
+  </div>
+</div>
 </body>
 </html>

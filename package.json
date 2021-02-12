@@ -1,6 +1,6 @@
 {
-  "name": "taskopen-description",
-  "version": "0.0.1",
+  "name": "taskana-workplace-lib",
+  "version": "0.0.2",
   "description": "Stencil Component Starter",
   "main": "dist/index.cjs.js",
   "module": "dist/custom-elements/index.js",
@@ -24,5 +24,17 @@
   "dependencies": {
     "@stencil/core": "^2.0.1"
   },
-  "license": "MIT"
+  "license": "MIT",
+  "devDependencies": {
+    "@stencil/angular-output-target": "0.0.5"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Tristan2357/taskana-workplace-lib.git"
+  },
+  "author": "",
+  "bugs": {
+    "url": "https://github.com/Tristan2357/taskana-workplace-lib/issues"
+  },
+  "homepage": "https://github.com/Tristan2357/taskana-workplace-lib#readme"
 }

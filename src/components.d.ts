@@ -6,6 +6,7 @@
  */
 import { HTMLStencilElement, JSXBase } from "@stencil/core/internal";
 import { Task } from "./models/task";
+import { Workbasket } from "./models/workbasket";
 export namespace Components {
     interface TaskList {
         "selectedId": string;
@@ -16,6 +17,7 @@ export namespace Components {
     }
     interface TaskOpenButtonbar {
         "task": Task;
+        "workbaskets": Workbasket[];
     }
     interface TaskOpenDescription {
         /**
@@ -74,7 +76,11 @@ declare namespace LocalJSX {
         "link"?: string;
     }
     interface TaskOpenButtonbar {
+        "onBackEvent"?: (event: CustomEvent<any>) => void;
+        "onCompleteEvent"?: (event: CustomEvent<any>) => void;
+        "onTransferEvent"?: (event: CustomEvent<any>) => void;
         "task"?: Task;
+        "workbaskets"?: Workbasket[];
     }
     interface TaskOpenDescription {
         /**
