@@ -68,12 +68,15 @@
   direction: ltr;
   -webkit-font-feature-settings: 'liga';
   -webkit-font-smoothing: antialiased;
+  width: 20px;
+  height: 20px;
 }
 
 input, textarea {
   padding: 12px 20px;
   margin: 8px 0;
   border: 1px solid #ced4da;
+  font-size: 100%;
   box-sizing: border-box;
   border-radius: 4px;
   transition: border-color .15s ease-in-out,box-shadow .15s ease-in-out;
@@ -89,5 +92,35 @@ input[type=text]:focus, textarea:focus {
   background-color: #fff;
   border-color: #80bdff;
   outline: 0;
-  box-shadow: 0 0 0 0.2rem rgba(0,123,255,.25);
+}
+
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #f9f9f9;
+  min-width: 200px;
+  width: fit-content;
+  box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
+  z-index: 1;
+  max-height: 50vh;
+}
+
+.dropdown-content > * {
+  padding: 0.6rem 1rem;
+  display: block;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.2);
+  cursor: pointer;
+}
+
+.dropdown-content > *:hover {
+  background-color: rgba(0, 0, 0, 0.04);
+}
+
+.dropdown:hover .dropdown-content {
+  display: block;
 }

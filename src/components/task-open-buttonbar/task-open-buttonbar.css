@@ -1,35 +1,7 @@
 @import '../../main.css';
 
-.dropdown {
-  position: relative;
-  display: inline-block;
-}
-
 .dropdown-content {
-  display: none;
-  position: absolute;
-  background-color: #f9f9f9;
-  min-width: 200px;
-  width: fit-content;
-  box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
-  z-index: 1;
-  max-height: 50vh;
   overflow-y: scroll;
-}
-
-.dropdown-content span {
-  padding: 0.6rem 1rem;
-  display: block;
-  border-bottom: 1px solid rgba(0, 0, 0, 0.2);
-  cursor: pointer;
-}
-
-.dropdown-content span:hover {
-  background-color: rgba(0, 0, 0, 0.04);
-}
-
-.dropdown:hover .dropdown-content {
-  display: block;
 }
 
 h4 {
