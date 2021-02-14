@@ -1,6 +1,6 @@
 @import "../../main.css";
 
-.btn > span.caret {
+.btn > span.no-text {
   margin: 0;
   vertical-align: auto;
 }
@@ -16,6 +16,19 @@ img {
 .flex > * {
   margin: 0 4px;
 }
+
 .flex > * > button {
   margin-right: 8px;
+}
+
+.t-v {
+  max-width: 8rem;
+}
+
+.dropdown.no-hover:hover .dropdown-content {
+  display: none;
+}
+
+.dropdown.no-hover:focus-within .dropdown-content {
+  display: block;
 }

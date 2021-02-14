@@ -1,4 +1,7 @@
-import { Component, h, State } from '@stencil/core';
+import { Component, Event, EventEmitter, h, Prop, State } from '@stencil/core';
+import { Workbasket } from '../../models/workbasket';
+import { WorkbasketResource } from '../../models/workbasket-resource';
+import * as workbasketsExample from '../../data/workbaskets.json';
 
 @Component({
   tag: 'task-search',
@@ -8,13 +11,50 @@ import { Component, h, State } from '@stencil/core';
 export class TaskSearch {
   @State() searchBy: string = 'wb';
 
+  @Prop() workbaskets: Workbasket[];
+
+  @Event() searchValueChangedEvent: EventEmitter<string>;
+
+  @Event() selectWorkbasketEvent: EventEmitter<string>;
+
+  private searchChangeHandler(event) {
+    let { value } = event.currentTarget;
+    this.searchValueChangedEvent.emit(value);
+  }
+
+  componentWillLoad() {
+    // this is just for demo purposes
+    const workbasketResource: WorkbasketResource = workbasketsExample;
+    if (!this.workbaskets) {
+      this.workbaskets = workbasketResource.workbaskets;
+    }
+  }
+
   render() {
     return <div class='flex'>
       <div>
         <button class='btn'>
-          <span class='material-icons caret'>keyboard_arrow_down</span>
+          <span class='material-icons no-text'>keyboard_arrow_down</span>
         </button>
-        {this.searchBy == 'wb' ? <input type='text' placeholder='Search for Workbasket'/> : ''}
+        {this.searchBy == 'wb' ?
+          <div class='dropdown no-hover'>
+            <input type='text' placeholder='Search for Workbasket' onInput={event => this.searchChangeHandler(event)} />
+            <div class='dropdown-content'>
+              {/* TODO: think about how search works and how a good way to abstract and simplify looks
+              maybe a search object with all options*/}
+              {this.workbaskets?.map(workbasket =>
+                <span onClick={() => this.selectWorkbasketEvent.emit(workbasket.workbasketId)}>
+                  {workbasket.name}</span>,
+              )}</div>
+          </div>
+          :
+          <div>
+            <input class='t-v' id='type' type='text' placeholder='Type' />
+            <input class='t-v' id='value' type='text' placeholder='Value'/>
+            <button class='btn primary'>
+              <span class='material-icons no-text'>search</span>
+            </button>
+          </div>}
 
       </div>
       <div class='dropdown'>

@@ -34,6 +34,7 @@ export namespace Components {
         "note": string;
     }
     interface TaskSearch {
+        "workbaskets": Workbasket[];
     }
 }
 declare global {
@@ -106,6 +107,9 @@ declare namespace LocalJSX {
         "note"?: string;
     }
     interface TaskSearch {
+        "onSearchValueChangedEvent"?: (event: CustomEvent<string>) => void;
+        "onSelectWorkbasketEvent"?: (event: CustomEvent<string>) => void;
+        "workbaskets"?: Workbasket[];
     }
     interface IntrinsicElements {
         "task-list": TaskList;

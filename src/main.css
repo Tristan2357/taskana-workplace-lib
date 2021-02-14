@@ -74,7 +74,7 @@
 
 input, textarea {
   padding: 12px 20px;
-  margin: 8px 0;
+  margin: 2px 0 8px 0;
   border: 1px solid #ced4da;
   font-size: 100%;
   box-sizing: border-box;
