@@ -5,11 +5,13 @@
   <meta name='viewport'
         content='width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=5.0' />
   <title>Workbasket Component Showcase</title>
-
+  <!--Load module with all WebComponents-->
   <script type='module' src='/build/taskana-workplace.esm.js'></script>
   <script nomodule src='/build/taskana-workplace.js'></script>
-  <!--Needed as external dependency-->
-  <link href='https://fonts.googleapis.com/icon?family=Material+Icons' rel='stylesheet'>
+  <!--Needed as external dependencies-->
+  <link href='https://fonts.googleapis.com/css?family=Roboto:300,400,500' rel='stylesheet'>
+  <link href='https://fonts.googleapis.com/css?family=Material+Icons&display=block'
+        rel='stylesheet'>
 </head>
 <body>
 <div style='display: flex; width: 100%'>
@@ -27,6 +29,12 @@
   <div style='flex: 0 0 40%; padding: 8px; border: 2px solid black; margin: 4px'>
     <task-list></task-list>
   </div>
+</div>
+<div style='display: flex; width: 100%'>
+  <div style='flex: 0 0 50%; padding: 8px; border: 2px solid black; margin: 4px'>
+    <task-preview-info></task-preview-info>
+  </div>
+  <div style='flex: 0 0 40%; padding: 8px; border: 2px solid black; margin: 4px'></div>
 </div>
 </body>
 </html>

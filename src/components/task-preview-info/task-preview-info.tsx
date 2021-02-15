@@ -9,7 +9,6 @@ export class TaskPreviewInfo {
 
   render() {
     return <div>
-      <task-list></task-list>
     </div>;
   }
 

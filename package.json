@@ -22,7 +22,14 @@
     "generate": "stencil generate"
   },
   "dependencies": {
-    "@stencil/core": "^2.0.1"
+    "@stencil/core": "^2.0.1",
+    "@material/mwc-button": "latest",
+    "@material/mwc-textfield": "latest",
+    "@material/mwc-textarea": "latest",
+    "@material/mwc-select": "latest",
+    "@material/mwc-list": "latest",
+    "@material/mwc-menu": "latest",
+    "@material/mwc-icon": "latest"
   },
   "license": "MIT",
   "devDependencies": {

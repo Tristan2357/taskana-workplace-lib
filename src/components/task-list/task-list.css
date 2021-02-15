@@ -1,47 +1,15 @@
 @import '../../main.css';
 
-.listItem {
-  display: flex;
-  margin-block-start: 0;
-  margin-block-end: 0;
-  padding-block-start: .5rem;
-  padding-block-end: .5rem;
-  border-bottom: 1px rgba(0, 0, 0, 0.12) solid;
-}
-
-.listItem:hover {
-  background-color: rgba(0, 0, 0, 0.04);
-}
-
 .selected {
   background-color: #246972!important;
-  color: #fff;
 }
 
-.row {
-  clear: both;
-  display: flex;
-  line-height: 1.2;
+.selected > * {
+  color: #fff !important;
 }
 
-dd.row {
-  margin-inline-start: 1rem;
-}
-
-.top {
-  font-weight: bold;
-}
-
-.right {
-  margin-left: 1rem;
-}
-
-.badgeCasing {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  margin-left: 0.5rem;
-  margin-right: 0.5rem;
+.selected > *[slot='secondary'] {
+  color: rgba(255,255,255, 0.7) !important;
 }
 
 .badge {
@@ -53,8 +21,4 @@ dd.row {
   border-radius: 4px;
   font-size: 80%;
   flex: auto;
-}
-
-.noPad {
-  padding: 0;
 }
