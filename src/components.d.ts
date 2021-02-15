@@ -33,6 +33,8 @@ export namespace Components {
          */
         "note": string;
     }
+    interface TaskPreviewInfo {
+    }
     interface TaskSearch {
         "workbaskets": Workbasket[];
     }
@@ -62,6 +64,12 @@ declare global {
         prototype: HTMLTaskOpenDescriptionElement;
         new (): HTMLTaskOpenDescriptionElement;
     };
+    interface HTMLTaskPreviewInfoElement extends Components.TaskPreviewInfo, HTMLStencilElement {
+    }
+    var HTMLTaskPreviewInfoElement: {
+        prototype: HTMLTaskPreviewInfoElement;
+        new (): HTMLTaskPreviewInfoElement;
+    };
     interface HTMLTaskSearchElement extends Components.TaskSearch, HTMLStencilElement {
     }
     var HTMLTaskSearchElement: {
@@ -73,6 +81,7 @@ declare global {
         "task-open-application": HTMLTaskOpenApplicationElement;
         "task-open-buttonbar": HTMLTaskOpenButtonbarElement;
         "task-open-description": HTMLTaskOpenDescriptionElement;
+        "task-preview-info": HTMLTaskPreviewInfoElement;
         "task-search": HTMLTaskSearchElement;
     }
 }
@@ -106,6 +115,8 @@ declare namespace LocalJSX {
          */
         "note"?: string;
     }
+    interface TaskPreviewInfo {
+    }
     interface TaskSearch {
         "onSearchValueChangedEvent"?: (event: CustomEvent<string>) => void;
         "onSelectWorkbasketEvent"?: (event: CustomEvent<string>) => void;
@@ -116,6 +127,7 @@ declare namespace LocalJSX {
         "task-open-application": TaskOpenApplication;
         "task-open-buttonbar": TaskOpenButtonbar;
         "task-open-description": TaskOpenDescription;
+        "task-preview-info": TaskPreviewInfo;
         "task-search": TaskSearch;
     }
 }
@@ -127,6 +139,7 @@ declare module "@stencil/core" {
             "task-open-application": LocalJSX.TaskOpenApplication & JSXBase.HTMLAttributes<HTMLTaskOpenApplicationElement>;
             "task-open-buttonbar": LocalJSX.TaskOpenButtonbar & JSXBase.HTMLAttributes<HTMLTaskOpenButtonbarElement>;
             "task-open-description": LocalJSX.TaskOpenDescription & JSXBase.HTMLAttributes<HTMLTaskOpenDescriptionElement>;
+            "task-preview-info": LocalJSX.TaskPreviewInfo & JSXBase.HTMLAttributes<HTMLTaskPreviewInfoElement>;
             "task-search": LocalJSX.TaskSearch & JSXBase.HTMLAttributes<HTMLTaskSearchElement>;
         }
     }
