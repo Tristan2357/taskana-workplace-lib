@@ -1,6 +1,6 @@
 {
   "name": "taskana-workplace-lib",
-  "version": "0.0.2",
+  "version": "0.0.4",
   "description": "Stencil Component Starter",
   "main": "dist/index.cjs.js",
   "module": "dist/custom-elements/index.js",
@@ -22,14 +22,14 @@
     "generate": "stencil generate"
   },
   "dependencies": {
-    "@stencil/core": "^2.0.1",
     "@material/mwc-button": "latest",
-    "@material/mwc-textfield": "latest",
-    "@material/mwc-textarea": "latest",
-    "@material/mwc-select": "latest",
+    "@material/mwc-icon": "latest",
     "@material/mwc-list": "latest",
     "@material/mwc-menu": "latest",
-    "@material/mwc-icon": "latest"
+    "@material/mwc-select": "latest",
+    "@material/mwc-textarea": "latest",
+    "@material/mwc-textfield": "latest",
+    "@stencil/core": "^2.0.1"
   },
   "license": "MIT",
   "devDependencies": {

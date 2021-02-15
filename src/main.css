@@ -21,6 +21,12 @@
   background-color: #5fbca1;
 }
 
+mwc-button {
+  --mdc-theme-primary: #246972;
+  --mdc-theme-on-primary: white;
+  margin-left: 4px;
+}
+
 .btn {
   vertical-align: baseline;
   text-align: center;

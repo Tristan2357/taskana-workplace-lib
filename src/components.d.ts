@@ -20,18 +20,7 @@ export namespace Components {
         "workbaskets": Workbasket[];
     }
     interface TaskOpenDescription {
-        /**
-          * The Description of the Task
-         */
-        "description": string;
-        /**
-          * The due Date
-         */
-        "dueDate": string;
-        /**
-          * Notes on the Task
-         */
-        "note": string;
+        "task": Task;
     }
     interface TaskPreviewInfo {
     }
@@ -102,18 +91,7 @@ declare namespace LocalJSX {
         "workbaskets"?: Workbasket[];
     }
     interface TaskOpenDescription {
-        /**
-          * The Description of the Task
-         */
-        "description"?: string;
-        /**
-          * The due Date
-         */
-        "dueDate"?: string;
-        /**
-          * Notes on the Task
-         */
-        "note"?: string;
+        "task"?: Task;
     }
     interface TaskPreviewInfo {
     }

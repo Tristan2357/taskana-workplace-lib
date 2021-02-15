@@ -1,4 +1,4 @@
-# task-open-buttonbar
+# task-search
 
 
 
@@ -9,17 +9,15 @@
 
 | Property      | Attribute | Description | Type           | Default     |
 | ------------- | --------- | ----------- | -------------- | ----------- |
-| `task`        | --        |             | `Task`         | `undefined` |
 | `workbaskets` | --        |             | `Workbasket[]` | `undefined` |
 
 
 ## Events
 
-| Event           | Description | Type               |
-| --------------- | ----------- | ------------------ |
-| `backEvent`     |             | `CustomEvent<any>` |
-| `completeEvent` |             | `CustomEvent<any>` |
-| `transferEvent` |             | `CustomEvent<any>` |
+| Event                     | Description | Type                  |
+| ------------------------- | ----------- | --------------------- |
+| `searchValueChangedEvent` |             | `CustomEvent<string>` |
+| `selectWorkbasketEvent`   |             | `CustomEvent<string>` |
 
 
 ----------------------------------------------
