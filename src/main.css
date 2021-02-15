@@ -21,9 +21,14 @@
   background-color: #5fbca1;
 }
 
-mwc-button {
-  --mdc-theme-primary: #246972;
+mwc-button, mwc-list, mwc-list-item, mwc-select, mwc-textfield, mwc-textarea, mwc-menu {
+  --mdc-theme-primary: #22a39f;
+  --mdc-theme-secondary: #246972;
+  --mdc-theme-error: #e53935;
   --mdc-theme-on-primary: white;
+}
+
+mwc-button {
   margin-left: 4px;
 }
 
@@ -85,7 +90,7 @@ input, textarea {
   font-size: 100%;
   box-sizing: border-box;
   border-radius: 4px;
-  transition: border-color .15s ease-in-out,box-shadow .15s ease-in-out;
+  transition: border-color .15s ease-in-out, box-shadow .15s ease-in-out;
 }
 
 [disabled] {

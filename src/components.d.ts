@@ -23,6 +23,7 @@ export namespace Components {
         "task": Task;
     }
     interface TaskPreviewInfo {
+        "task": Task;
     }
     interface TaskSearch {
         "workbaskets": Workbasket[];
@@ -94,6 +95,7 @@ declare namespace LocalJSX {
         "task"?: Task;
     }
     interface TaskPreviewInfo {
+        "task"?: Task;
     }
     interface TaskSearch {
         "onSearchValueChangedEvent"?: (event: CustomEvent<string>) => void;
