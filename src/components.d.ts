@@ -7,6 +7,7 @@
 import { HTMLStencilElement, JSXBase } from "@stencil/core/internal";
 import { Task } from "./models/task";
 import { Workbasket } from "./models/workbasket";
+import { ClassificationSummary } from "./models/classification-summary";
 export namespace Components {
     interface TaskList {
         "selectedId": string;
@@ -23,6 +24,7 @@ export namespace Components {
         "task": Task;
     }
     interface TaskPreviewInfo {
+        "classifications": ClassificationSummary[];
         "task": Task;
     }
     interface TaskSearch {
@@ -95,6 +97,7 @@ declare namespace LocalJSX {
         "task"?: Task;
     }
     interface TaskPreviewInfo {
+        "classifications"?: ClassificationSummary[];
         "task"?: Task;
     }
     interface TaskSearch {

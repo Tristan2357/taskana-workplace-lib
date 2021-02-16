@@ -1,1 +1,19 @@
 @import '../../main.css';
+
+div:not(.row) {
+  width: 100%;
+}
+
+.row {
+  width: 100%;
+  justify-content: space-between !important;
+}
+
+mwc-textfield, mwc-textarea, mwc-select {
+  width: calc(50% - 16px);
+  margin: 16px 8px;
+}
+
+.smoll {
+  width: calc(25% - 16px);
+}
