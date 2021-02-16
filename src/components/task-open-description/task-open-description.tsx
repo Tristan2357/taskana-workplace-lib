@@ -15,13 +15,11 @@ export class TaskOpenDescription {
   @Prop() task: Task;
 
   componentWillLoad() {
-    // this is just for demo purposes
+    // this is just for demo purposes TODO remove before actual use
     const taskResource: TaskResource = listExample;
     if (!this.task) {
-      const tasks = taskResource.tasks;
-      this.task = tasks[4];
+      this.task = (taskResource.tasks)[4];
     }
-
   }
 
   render() {

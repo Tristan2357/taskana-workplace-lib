@@ -44,8 +44,6 @@ export class Task {
     public custom15?: string,
     public custom16?: string,
   ) {
-    if (!this.customAttributes) this.customAttributes = [];
-    if (!this.callbackInfo) this.callbackInfo = [];
   }
 }
 

@@ -23,11 +23,11 @@ export class TaskList {
   };
 
   componentWillLoad() {
-    // this is just for demo purposes
+    // this is just for demo purposes TODO remove before actual use
     const taskResource: TaskResource = listExample;
     if (!this.tasks) {
       this.tasks = taskResource.tasks;
-      this.selectedId = 'TKI:000000000000000000000000000000000002';
+      this.selectedId = this.tasks[4].taskId;
     }
 
   }

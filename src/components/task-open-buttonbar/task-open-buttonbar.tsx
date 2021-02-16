@@ -30,7 +30,7 @@ export class TaskOpenButtonbar {
   menuButton!: HTMLElement;
 
   componentWillLoad() {
-    // this is just for demo purposes
+    // this is just for demo purposes TODO remove before actual use
     const taskResource: TaskResource = listExample;
     const workbasketResource: WorkbasketResource = workbasketsExample;
     if (!this.task) {

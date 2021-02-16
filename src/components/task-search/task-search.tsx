@@ -23,7 +23,7 @@ export class TaskSearch {
   }
 
   componentWillLoad() {
-    // this is just for demo purposes
+    // this is just for demo purposes TODO remove before actual use
     const workbasketResource: WorkbasketResource = workbasketsExample;
     if (!this.workbaskets) {
       this.workbaskets = workbasketResource.workbaskets;
