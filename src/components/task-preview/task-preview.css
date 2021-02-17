@@ -9,7 +9,7 @@ table {
   margin-top: 8px;
 }
 
-.row {
+.flex {
   width: 100%;
   justify-content: space-between;
 }

@@ -22,6 +22,10 @@
   --mdc-theme-primary: #e53935;
 }
 
+.white {
+  color: white;
+}
+
 mwc-button, mwc-list, mwc-list-item, mwc-select, mwc-textfield, mwc-textarea, mwc-menu {
   --mdc-theme-primary: #22a39f;
   --mdc-theme-secondary: #246972;
@@ -39,55 +43,11 @@ mwc-button {
   margin-left: 4px;
 }
 
-.btn {
-  vertical-align: baseline;
-  text-align: center;
-  margin: 0 2px;
-  min-width: 48px;
-  line-height: 36px;
-  padding: 0 16px;
-  border-radius: 4px;
-  border: 1px solid rgba(0, 0, 0, 0.2);
-  font-size: 100%;
-  background-color: white;
-  color: black;
-  cursor: pointer;
-}
-
-.btn.primary {
-  background-color: #22a39f;
-  color: #fff;
-  border: none;
-}
-
-.btn > span {
-  margin: 0 0 2px 6px;
-  vertical-align: middle;
-}
-
 .flex {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
-}
-
-.material-icons {
-  font-family: 'Material Icons';
-  font-weight: normal;
-  font-style: normal;
-  font-size: 20px;
-  line-height: 1;
-  letter-spacing: normal;
-  text-transform: none;
-  display: inline-block;
-  white-space: nowrap;
-  word-wrap: normal;
-  direction: ltr;
-  -webkit-font-feature-settings: 'liga';
-  -webkit-font-smoothing: antialiased;
-  width: 20px;
-  height: 20px;
 }
 
 input, textarea {
@@ -110,35 +70,4 @@ input[type=text]:focus, textarea:focus {
   background-color: #fff;
   border-color: #80bdff;
   outline: 0;
-}
-
-.dropdown {
-  position: relative;
-  display: inline-block;
-}
-
-.dropdown-content {
-  display: none;
-  position: absolute;
-  background-color: #f9f9f9;
-  min-width: 200px;
-  width: fit-content;
-  box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
-  z-index: 1;
-  max-height: 50vh;
-}
-
-.dropdown-content > * {
-  padding: 0.6rem 1rem;
-  display: block;
-  border-bottom: 1px solid rgba(0, 0, 0, 0.2);
-  cursor: pointer;
-}
-
-.dropdown-content > *:hover {
-  background-color: rgba(0, 0, 0, 0.04);
-}
-
-.dropdown:hover .dropdown-content {
-  display: block;
 }

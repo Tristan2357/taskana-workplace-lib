@@ -23,7 +23,7 @@ export class TaskPreview {
   private menuButton: HTMLElement;
   private resetState: Task;
 
-  @State() infoActive: boolean = true;
+  @State() infoActive: boolean = !true; //TODO
   @State() statusActive: boolean = false;
   @State() fieldsActive: boolean = false;
   @State() attributesActive: boolean = false;
