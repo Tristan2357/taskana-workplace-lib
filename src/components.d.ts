@@ -23,7 +23,7 @@ export namespace Components {
     interface TaskOpenDescription {
         "task": Task;
     }
-    interface TaskPreviewInfo {
+    interface TaskPreview {
         "classifications": ClassificationSummary[];
         "task": Task;
     }
@@ -56,11 +56,11 @@ declare global {
         prototype: HTMLTaskOpenDescriptionElement;
         new (): HTMLTaskOpenDescriptionElement;
     };
-    interface HTMLTaskPreviewInfoElement extends Components.TaskPreviewInfo, HTMLStencilElement {
+    interface HTMLTaskPreviewElement extends Components.TaskPreview, HTMLStencilElement {
     }
-    var HTMLTaskPreviewInfoElement: {
-        prototype: HTMLTaskPreviewInfoElement;
-        new (): HTMLTaskPreviewInfoElement;
+    var HTMLTaskPreviewElement: {
+        prototype: HTMLTaskPreviewElement;
+        new (): HTMLTaskPreviewElement;
     };
     interface HTMLTaskSearchElement extends Components.TaskSearch, HTMLStencilElement {
     }
@@ -73,7 +73,7 @@ declare global {
         "task-open-application": HTMLTaskOpenApplicationElement;
         "task-open-buttonbar": HTMLTaskOpenButtonbarElement;
         "task-open-description": HTMLTaskOpenDescriptionElement;
-        "task-preview-info": HTMLTaskPreviewInfoElement;
+        "task-preview": HTMLTaskPreviewElement;
         "task-search": HTMLTaskSearchElement;
     }
 }
@@ -96,8 +96,12 @@ declare namespace LocalJSX {
     interface TaskOpenDescription {
         "task"?: Task;
     }
-    interface TaskPreviewInfo {
+    interface TaskPreview {
         "classifications"?: ClassificationSummary[];
+        "onCloseEvent"?: (event: CustomEvent<void>) => void;
+        "onDeleteEvent"?: (event: CustomEvent<string>) => void;
+        "onOpenTaskEvent"?: (event: CustomEvent<string>) => void;
+        "onSaveEvent"?: (event: CustomEvent<Task>) => void;
         "task"?: Task;
     }
     interface TaskSearch {
@@ -110,7 +114,7 @@ declare namespace LocalJSX {
         "task-open-application": TaskOpenApplication;
         "task-open-buttonbar": TaskOpenButtonbar;
         "task-open-description": TaskOpenDescription;
-        "task-preview-info": TaskPreviewInfo;
+        "task-preview": TaskPreview;
         "task-search": TaskSearch;
     }
 }
@@ -122,7 +126,7 @@ declare module "@stencil/core" {
             "task-open-application": LocalJSX.TaskOpenApplication & JSXBase.HTMLAttributes<HTMLTaskOpenApplicationElement>;
             "task-open-buttonbar": LocalJSX.TaskOpenButtonbar & JSXBase.HTMLAttributes<HTMLTaskOpenButtonbarElement>;
             "task-open-description": LocalJSX.TaskOpenDescription & JSXBase.HTMLAttributes<HTMLTaskOpenDescriptionElement>;
-            "task-preview-info": LocalJSX.TaskPreviewInfo & JSXBase.HTMLAttributes<HTMLTaskPreviewInfoElement>;
+            "task-preview": LocalJSX.TaskPreview & JSXBase.HTMLAttributes<HTMLTaskPreviewElement>;
             "task-search": LocalJSX.TaskSearch & JSXBase.HTMLAttributes<HTMLTaskSearchElement>;
         }
     }

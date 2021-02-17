@@ -5,10 +5,6 @@
   src: url(https://fonts.gstatic.com/s/materialicons/v76/flUhRq6tzZclQEJ-Vdg-IuiaDsNc.woff2) format('woff2');
 }
 
-* {
-  font-family: 'Roboto', sans-serif;
-}
-
 .red {
   background-color: #d82626;
 }
@@ -21,11 +17,22 @@
   background-color: #5fbca1;
 }
 
+.danger {
+  color: #e53935;
+  --mdc-theme-primary: #e53935;
+}
+
 mwc-button, mwc-list, mwc-list-item, mwc-select, mwc-textfield, mwc-textarea, mwc-menu {
   --mdc-theme-primary: #22a39f;
   --mdc-theme-secondary: #246972;
   --mdc-theme-error: #e53935;
   --mdc-theme-on-primary: white;
+}
+
+mwc-icon {
+  color: #22a39f;
+  font-size: 18px;
+  align-self: baseline;
 }
 
 mwc-button {

@@ -51,9 +51,9 @@ export class TaskOpenButtonbar {
         <h4>{this.task?.name}</h4>
       </div>
       <div>
-        <mwc-button unelevated label='Go back' icon='arrow_back' trailingIcon onClick={this.backEvent.emit} />
+        <mwc-button outlined label='Go back' icon='arrow_back' trailingIcon onClick={this.backEvent.emit} />
 
-        <mwc-button outlined label='Complete Task' icon='check' trailingIcon
+        <mwc-button unelevated label='Complete Task' icon='check' trailingIcon
                     onClick={() => this.completeEvent.emit(this.task.taskId)} />
 
         <mwc-button id='transferMenuButton' outlined label='Transfer Task' icon='transfer_within_a_station' trailingIcon

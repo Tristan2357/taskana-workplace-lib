@@ -1,10 +1,10 @@
 import { newSpecPage } from '@stencil/core/testing';
-import { TaskPreviewInfo } from '../task-preview-info';
+import { TaskPreview } from '../task-preview.component';
 
 describe('task-preview-info', () => {
   it('renders', async () => {
     const page = await newSpecPage({
-      components: [TaskPreviewInfo],
+      components: [TaskPreview],
       html: `<task-preview-info></task-preview-info>`,
     });
     expect(page.root).toEqualHtml(`
