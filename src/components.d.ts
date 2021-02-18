@@ -8,6 +8,7 @@ import { HTMLStencilElement, JSXBase } from "@stencil/core/internal";
 import { Task } from "./models/task";
 import { Workbasket } from "./models/workbasket";
 import { ClassificationSummary } from "./models/classification-summary";
+import { TaskFilterOptions } from "./components/task-search/task-search";
 export namespace Components {
     interface TaskList {
         "selectedId": string;
@@ -28,6 +29,7 @@ export namespace Components {
         "task": Task;
     }
     interface TaskSearch {
+        "workbaskets": Workbasket[];
     }
 }
 declare global {
@@ -104,6 +106,9 @@ declare namespace LocalJSX {
         "task"?: Task;
     }
     interface TaskSearch {
+        "onAddTaskEvent"?: (event: CustomEvent<void>) => void;
+        "onSearchTasksEvent"?: (event: CustomEvent<TaskFilterOptions>) => void;
+        "workbaskets"?: Workbasket[];
     }
     interface IntrinsicElements {
         "task-list": TaskList;

@@ -43,6 +43,7 @@ export class TaskOpenButtonbar {
 
   componentDidLoad() {
     this.menu.anchor = this.menuButton;
+    this.menu.corner = 'BOTTOM_LEFT';
   }
 
   render() {
@@ -56,12 +57,12 @@ export class TaskOpenButtonbar {
         <mwc-button unelevated label='Complete Task' icon='check' trailingIcon
                     onClick={() => this.completeEvent.emit(this.task.taskId)} />
 
-        <mwc-button id='transferMenuButton' outlined label='Transfer Task' icon='transfer_within_a_station' trailingIcon
+        <mwc-button outlined label='Transfer Task' icon='transfer_within_a_station' trailingIcon
                     ref={b => this.menuButton = b}
                     onClick={() => {
                       this.menu.show();
                     }} />
-        <mwc-menu id='transferMenu' fixed ref={m => this.menu = m}>
+        <mwc-menu fixed ref={m => this.menu = m}>
           {this.workbaskets.map(workbasket =>
             <mwc-list-item onClick={() => this.transferEvent.emit({
               taskId: this.task.taskId,

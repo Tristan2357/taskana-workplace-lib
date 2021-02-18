@@ -43,7 +43,7 @@ export class TaskList {
               <span slot='secondary'>{task.state} &nbsp; Due: {task.due}</span>
               <span class={'badge ' + (task.priority <= 5 ? 'red' : (task.priority <= 15 ? 'orange' : 'green'))}
                     slot='graphic'>
-                {task.priority}</span>
+                {task.priority}</span>{/* TODO priority anpassbar*/}
             </mwc-list-item>,
           )}
         </mwc-list>

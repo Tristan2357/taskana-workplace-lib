@@ -46,11 +46,6 @@ export class TaskPreview {
     this.resetState = { ...this.taskState };
   }
 
-  @Watch('taskState')
-  watchTaskStateHandler(task) {
-    console.log(task);
-  }
-
   componentWillLoad() {
     // TODO remove before actual use
     if (!this.task) {
@@ -61,6 +56,7 @@ export class TaskPreview {
 
   componentDidLoad() {
     this.menu.anchor = this.menuButton;
+    this.menu.corner = 'BOTTOM_LEFT';
   }
 
   private customFieldsGenerator(): any[] {

@@ -3,13 +3,19 @@
 .column {
   flex-direction: column;
   align-items: flex-start;
-  justify-content: space-evenly;
+  justify-content: space-around;
   gap: 8px;
   height: 120px;
 }
 
 .grow {
   flex-grow: 1;
+  width: 100%;
+  height: 100%;
+  margin: 0 20px;
+}
+
+.s100 {
   width: 100%;
   height: 100%;
 }
@@ -27,7 +33,7 @@ mwc-button {
   margin-left: 0;
 }
 
-mwc-icon {
+mwc-button > mwc-icon {
   font-size: 22px;
 }
 
@@ -46,3 +52,14 @@ mwc-icon {
 .not.hidden {
   display: inherit;
 }
+
+mwc-list-item > mwc-icon {
+  vertical-align: text-bottom;
+  margin-right: 4px;
+}
+
+mwc-list-item:not([selected]) > mwc-icon {
+  color: transparent;
+}
+
+

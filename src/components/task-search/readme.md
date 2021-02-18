@@ -14,10 +14,10 @@
 
 ## Events
 
-| Event                     | Description | Type                  |
-| ------------------------- | ----------- | --------------------- |
-| `searchValueChangedEvent` |             | `CustomEvent<string>` |
-| `selectWorkbasketEvent`   |             | `CustomEvent<string>` |
+| Event              | Description | Type                             |
+| ------------------ | ----------- | -------------------------------- |
+| `addTaskEvent`     |             | `CustomEvent<void>`              |
+| `searchTasksEvent` |             | `CustomEvent<TaskFilterOptions>` |
 
 
 ----------------------------------------------
