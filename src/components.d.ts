@@ -11,6 +11,8 @@ import { ClassificationSummary } from "./models/classification-summary";
 import { TaskFilterOptions } from "./components/task-search/task-search";
 export namespace Components {
     interface TaskList {
+        "orangePriority": number;
+        "redPriority": number;
         "selectedId": string;
         "tasks": Task[];
     }
@@ -81,6 +83,8 @@ declare global {
 declare namespace LocalJSX {
     interface TaskList {
         "onSelectedIdChange"?: (event: CustomEvent<any>) => void;
+        "orangePriority"?: number;
+        "redPriority"?: number;
         "selectedId"?: string;
         "tasks"?: Task[];
     }

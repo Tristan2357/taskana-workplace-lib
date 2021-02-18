@@ -1,7 +1,6 @@
 import { Component, Event, EventEmitter, h, Prop, State, Watch } from '@stencil/core';
 import { Workbasket } from '../../models/workbasket';
 import { Menu } from '@material/mwc-menu';
-import { workbaskets as wb } from '../../data/workbaskets.json';
 import '@material/mwc-icon';
 import '@material/mwc-button';
 import '@material/mwc-menu';
@@ -91,13 +90,6 @@ export class TaskSearch {
 
   }
 
-  componentWillLoad() {
-    // this is just for demo purposes TODO remove before actual use
-    if (!this.workbaskets) {
-      this.workbaskets = wb;
-    }
-  }
-
   componentDidLoad() {
     this.workbasketMenu.anchor = this.workbasketTextField;
     this.workbasketMenu.corner = 'BOTTOM_LEFT';
@@ -122,14 +114,11 @@ export class TaskSearch {
                          onInput={e => {
                            this.workbasketMenu.open = true;
                            this.workbasketSearch = e.target.value;
-                         }}
-            // onFocusin={() => this.workbasketMenu.open = true}
-          />
+                         }} />
           <mwc-menu tabindex={-1} fixed ref={m => this.workbasketMenu = m} onSelected={(e: SingleSelectedEvent) => {
             this.workbasketSearch = this.workbasketMenu.items[e.detail.index]?.value || this.workbasketSearch;
-
           }}>
-            {this.workbasketNames.filter(name => name?.toLowerCase().includes(this.workbasketSearch?.toLowerCase())).map(name =>
+            {this.workbasketNames?.filter(name => name?.toLowerCase().includes(this.workbasketSearch?.toLowerCase())).map(name =>
               <mwc-list-item value={name}>{name}</mwc-list-item>)}
           </mwc-menu>
           <div class='flex s100'>
@@ -139,17 +128,19 @@ export class TaskSearch {
         </div>
         <div class='flex column right'>
           <mwc-button outlined ref={b => this.sortButton = b}
-                      onClick={() => this.sortMenu.show()}> {/*TODO Icons and non-interactive - custom styled sub-header-titles*/}
+                      onClick={() => this.sortMenu.show()}>
             <mwc-icon>sort</mwc-icon>
           </mwc-button>
           <mwc-menu fixed multi ref={m => this.sortMenu = m} graphic='icon'
                     onSelected={() => this.handleSortingParams()}>
+            <mwc-list-item noninteractive>Sort Direction</mwc-list-item>
             <mwc-list-item selected={this.order == 'ASCENDING'} group='order'>
               <mwc-icon>check</mwc-icon>
               <span>Ascending</span></mwc-list-item>
             <mwc-list-item selected={this.order == 'DESCENDING'} divider group='order'>
               <mwc-icon>check</mwc-icon>
               <span>Descending</span></mwc-list-item>
+            <mwc-list-item noninteractive>Sort Value</mwc-list-item>
             <mwc-list-item selected={this.sortBy == 'PRIORITY'} group='sortBy'>
               <mwc-icon>check</mwc-icon>
               <span>Priority</span></mwc-list-item>

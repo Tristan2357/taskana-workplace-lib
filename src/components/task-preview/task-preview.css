@@ -4,9 +4,10 @@ div {
   width: 100%;
 }
 
-table {
+div.not.hidden > table {
   width: 100%;
   margin-top: 8px;
+  border-spacing: 0;
 }
 
 .flex {
@@ -63,10 +64,6 @@ th {
 
 tr:nth-child(2) > td {
   padding-top: 16px;
-}
-
-table {
-  border-spacing: 0;
 }
 
 .flex.right {

@@ -1,13 +1,9 @@
 import { Component, Event, EventEmitter, h, Prop } from '@stencil/core';
 import { Menu } from '@material/mwc-menu';
 import { Task } from '../../models/task';
-import { TaskResource } from '../../models/task-resource';
 import { Workbasket } from '../../models/workbasket';
-import { WorkbasketResource } from '../../models/workbasket-resource';
 import '@material/mwc-button';
 import '@material/mwc-menu';
-import * as listExample from '../../data/list-example.json';
-import * as workbasketsExample from '../../data/workbaskets.json';
 
 @Component({
   tag: 'task-open-buttonbar',
@@ -28,18 +24,6 @@ export class TaskOpenButtonbar {
 
   menu!: Menu;
   menuButton!: HTMLElement;
-
-  componentWillLoad() {
-    // this is just for demo purposes TODO remove before actual use
-    const taskResource: TaskResource = listExample;
-    const workbasketResource: WorkbasketResource = workbasketsExample;
-    if (!this.task) {
-      this.task = taskResource.tasks[0];
-    }
-    if (!this.workbaskets) {
-      this.workbaskets = workbasketResource.workbaskets;
-    }
-  }
 
   componentDidLoad() {
     this.menu.anchor = this.menuButton;
@@ -63,7 +47,7 @@ export class TaskOpenButtonbar {
                       this.menu.show();
                     }} />
         <mwc-menu fixed ref={m => this.menu = m}>
-          {this.workbaskets.map(workbasket =>
+          {this.workbaskets?.map(workbasket =>
             <mwc-list-item onClick={() => this.transferEvent.emit({
               taskId: this.task.taskId,
               workbasketId: workbasket.workbasketId,

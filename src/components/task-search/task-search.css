@@ -54,8 +54,16 @@ mwc-button > mwc-icon {
 }
 
 mwc-list-item > mwc-icon {
-  vertical-align: text-bottom;
+  vertical-align: bottom;
   margin-right: 4px;
+}
+
+mwc-list-item[noninteractive] {
+  color: rgba(0, 0, 0, 0.54);
+  font-size: 0.75rem;
+  margin-left: -4px;
+  margin-top: 8px;
+  height: fit-content;
 }
 
 mwc-list-item:not([selected]) > mwc-icon {

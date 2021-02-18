@@ -1,7 +1,6 @@
 import { Component, Event, EventEmitter, h, Prop, State, Watch } from '@stencil/core';
 import { CustomAttribute, Task } from '../../models/task';
 import { ClassificationSummary } from '../../models/classification-summary';
-import { classifications } from '../../data/classifications.json';
 import '@material/mwc-textfield';
 import '@material/mwc-textarea';
 import '@material/mwc-button';
@@ -9,7 +8,6 @@ import '@material/mwc-select';
 import '@material/mwc-menu';
 import '@material/mwc-list';
 import '@material/mwc-icon';
-import { tasks } from '../../data/list-example.json';
 import { Menu } from '@material/mwc-menu';
 import { SingleSelectedEvent } from '@material/mwc-list/mwc-list-foundation';
 
@@ -23,7 +21,7 @@ export class TaskPreview {
   private menuButton: HTMLElement;
   private resetState: Task;
 
-  @State() infoActive: boolean = !true; //TODO
+  @State() infoActive: boolean = true;
   @State() statusActive: boolean = false;
   @State() fieldsActive: boolean = false;
   @State() attributesActive: boolean = false;
@@ -44,14 +42,6 @@ export class TaskPreview {
     this.taskState.customAttributes = this.taskState.customAttributes || [];
     this.taskState.callbackInfo = this.taskState.callbackInfo || [];
     this.resetState = { ...this.taskState };
-  }
-
-  componentWillLoad() {
-    // TODO remove before actual use
-    if (!this.task) {
-      this.task = tasks[4];
-    }
-    if (!this.classifications) this.classifications = classifications;
   }
 
   componentDidLoad() {

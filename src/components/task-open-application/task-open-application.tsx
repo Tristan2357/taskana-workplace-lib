@@ -12,7 +12,7 @@ export class TaskOpenApplication {
   render() {
     return (
       <Host>
-        <iframe src={this.link}/> //TODO think about if this is a useful component
+        <iframe src={this.link}/> {/*think about if this is a useful component => NO*/}
       </Host>
     );
   }
