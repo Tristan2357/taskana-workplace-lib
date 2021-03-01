@@ -1,6 +1,7 @@
 # Task Buttonbar
 
 This component displays a buttonbar, when working on a task.
+
 ![img.png](../../assets/doc-examples/task-buttonbar.png)
 
 <!-- Auto Generated Below -->

@@ -1,6 +1,7 @@
 # Task Description
 
 This component displays a short description of the Task, so that the user can understand what this task is about.
+
 ![img.png](../../assets/doc-examples/task-description.png)
 
 <!-- Auto Generated Below -->
