@@ -28,12 +28,19 @@ export class TaskPreview {
   @State() callbackActive: boolean = false;
   @State() taskState: Task;
 
+  /** The task, which should be displayed*/
   @Prop() task: Task;
+  /** The List of classifications, which exist. This is used to show the user a dropdown to specify the classification of the task.*/
   @Prop() classifications: ClassificationSummary[];
 
+  /** This event gets emitted, when the user saves the Task. It emits the Task, that should be saved.*/
   @Event() saveEvent: EventEmitter<Task>;
+  /** This event gets emitted, when the user wants to open the task to work on it. It emits the taskId.*/
   @Event() openTaskEvent: EventEmitter<string>;
+  /** This event gets emitted, when the user wants to delete the current Task. It emits the taskId.
+   *  This component does NOT include a second dialog, which confirms the users choice to delete the task. Please make sure your application includes a PopUp to confirm, if the user actually wants to delete the task.*/
   @Event() deleteEvent: EventEmitter<string>;
+  /** This event gets emitted, when the user closes the current Task.*/
   @Event() closeEvent: EventEmitter<void>;
 
   @Watch('task')

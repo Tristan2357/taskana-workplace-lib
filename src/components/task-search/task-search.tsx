@@ -50,9 +50,15 @@ export class TaskSearch {
   @State() workbasketSearch: string;
   @State() workbasketNames: string[];
 
+  /** A list of existing Workbaskets, which the user is allowed to access.
+   * this list gets used to display a dropdown for easier filtering by Workbasket*/
   @Prop() workbaskets: Workbasket[];
 
+  /** This event gets emitted, when the "Add" button has been pressed.*/
   @Event() addTaskEvent: EventEmitter<void>;
+
+  /** This event gets emitted, when a user has pressed the "Search" button.
+   * It emits a TaskFilterOptions object, which contains all the parameters for the specified search.*/
   @Event() searchTasksEvent: EventEmitter<TaskFilterOptions>;
 
   @Watch('workbaskets')

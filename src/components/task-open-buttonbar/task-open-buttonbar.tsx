@@ -12,15 +12,17 @@ import '@material/mwc-menu';
 })
 export class TaskOpenButtonbar {
 
+  /** The current Task, this is used to get context for the events*/
   @Prop() task: Task;
-
+  /** The list of to the user available workbaskets. This is used to provide a dropdown to transfer the task to another workbasket.*/
   @Prop() workbaskets: Workbasket[];
 
-  @Event() backEvent: EventEmitter;
-
-  @Event() completeEvent: EventEmitter;
-
-  @Event() transferEvent: EventEmitter;
+  /**This event gets emitted, when the user wants to go leave the current page and return to the preview of the task.*/
+  @Event() backEvent: EventEmitter<void>;
+  /**This event gets emitted, when the user marks the current task as completed. It emits the taskId of the completed task.*/
+  @Event() completeEvent: EventEmitter<string>;
+  /**This event gets emitted,when the user wants to transfer the task to another workbasket. It emits an object, which contains the taskId and the workbasketId, to which the task should be transferred to.*/
+  @Event() transferEvent: EventEmitter<{ taskId: string, workbasketId: string }>;
 
   menu!: Menu;
   menuButton!: HTMLElement;

@@ -7,6 +7,7 @@ import { Component, h, Host, Prop } from '@stencil/core';
 })
 export class TaskOpenApplication {
 
+  /*The link to which the iFrame leads to*/
   @Prop() link: string;
 
   render() {

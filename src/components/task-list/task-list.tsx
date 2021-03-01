@@ -10,12 +10,17 @@ import '@material/mwc-list/mwc-list-item.js';
 })
 export class TaskList {
 
+  /** The list of tasks, that should be displayed. Note, that this component does not limit the length.*/
   @Prop() tasks: Task[];
+  /** The taskId of the currently selected task*/
   @Prop() selectedId: string;
+  /** This number specifies the priority under which (inclusive) tasks will get a red badge.*/
   @Prop() redPriority: number = 5;
+  /** This number specifies the priority under which (inclusive) tasks will get a orange badge.*/
   @Prop() orangePriority: number = 15;
 
-  @Event() selectedIdChange: EventEmitter;
+  /** This event gets emitted, when the user selects a task. It emits the taskId of the selected task.*/
+  @Event() selectedIdChange: EventEmitter<string>;
 
   @Listen('selectedIdChange') idChangeHandler(event: CustomEvent) {
     this.selectedId = event.detail;

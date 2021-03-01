@@ -10,6 +10,7 @@ import '@material/mwc-textfield';
 })
 export class TaskOpenDescription {
 
+  /** The task, of which the short description should be displayed*/
   @Prop() task: Task;
 
   render() {

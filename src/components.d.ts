@@ -11,26 +11,56 @@ import { ClassificationSummary } from "./models/classification-summary";
 import { TaskFilterOptions } from "./components/task-search/task-search";
 export namespace Components {
     interface TaskList {
+        /**
+          * This number specifies the priority under which (inclusive) tasks will get a orange badge.
+         */
         "orangePriority": number;
+        /**
+          * This number specifies the priority under which (inclusive) tasks will get a red badge.
+         */
         "redPriority": number;
+        /**
+          * The taskId of the currently selected task
+         */
         "selectedId": string;
+        /**
+          * The list of tasks, that should be displayed. Note, that this component does not limit the length.
+         */
         "tasks": Task[];
     }
     interface TaskOpenApplication {
         "link": string;
     }
     interface TaskOpenButtonbar {
+        /**
+          * The current Task, this is used to get context for the events
+         */
         "task": Task;
+        /**
+          * The list of to the user available workbaskets. This is used to provide a dropdown to transfer the task to another workbasket.
+         */
         "workbaskets": Workbasket[];
     }
     interface TaskOpenDescription {
+        /**
+          * The task, of which the short description should be displayed
+         */
         "task": Task;
     }
     interface TaskPreview {
+        /**
+          * The List of classifications, which exist. This is used to show the user a dropdown to specify the classification of the task.
+         */
         "classifications": ClassificationSummary[];
+        /**
+          * The task, which should be displayed
+         */
         "task": Task;
     }
     interface TaskSearch {
+        /**
+          * A list of existing Workbaskets, which the user is allowed to access. this list gets used to display a dropdown for easier filtering by Workbasket
+         */
         "workbaskets": Workbasket[];
     }
 }
@@ -82,36 +112,96 @@ declare global {
 }
 declare namespace LocalJSX {
     interface TaskList {
-        "onSelectedIdChange"?: (event: CustomEvent<any>) => void;
+        /**
+          * This event gets emitted, when the user selects a task. It emits the taskId of the selected task.
+         */
+        "onSelectedIdChange"?: (event: CustomEvent<string>) => void;
+        /**
+          * This number specifies the priority under which (inclusive) tasks will get a orange badge.
+         */
         "orangePriority"?: number;
+        /**
+          * This number specifies the priority under which (inclusive) tasks will get a red badge.
+         */
         "redPriority"?: number;
+        /**
+          * The taskId of the currently selected task
+         */
         "selectedId"?: string;
+        /**
+          * The list of tasks, that should be displayed. Note, that this component does not limit the length.
+         */
         "tasks"?: Task[];
     }
     interface TaskOpenApplication {
         "link"?: string;
     }
     interface TaskOpenButtonbar {
-        "onBackEvent"?: (event: CustomEvent<any>) => void;
-        "onCompleteEvent"?: (event: CustomEvent<any>) => void;
-        "onTransferEvent"?: (event: CustomEvent<any>) => void;
+        /**
+          * This event gets emitted, when the user wants to go leave the current page and return to the preview of the task.
+         */
+        "onBackEvent"?: (event: CustomEvent<void>) => void;
+        /**
+          * This event gets emitted, when the user marks the current task as completed. It emits the taskId of the completed task.
+         */
+        "onCompleteEvent"?: (event: CustomEvent<string>) => void;
+        /**
+          * This event gets emitted,when the user wants to transfer the task to another workbasket. It emits an object, which contains the taskId and the workbasketId, to which the task should be transferred to.
+         */
+        "onTransferEvent"?: (event: CustomEvent<{ taskId: string, workbasketId: string }>) => void;
+        /**
+          * The current Task, this is used to get context for the events
+         */
         "task"?: Task;
+        /**
+          * The list of to the user available workbaskets. This is used to provide a dropdown to transfer the task to another workbasket.
+         */
         "workbaskets"?: Workbasket[];
     }
     interface TaskOpenDescription {
+        /**
+          * The task, of which the short description should be displayed
+         */
         "task"?: Task;
     }
     interface TaskPreview {
+        /**
+          * The List of classifications, which exist. This is used to show the user a dropdown to specify the classification of the task.
+         */
         "classifications"?: ClassificationSummary[];
+        /**
+          * This event gets emitted, when the user closes the current Task.
+         */
         "onCloseEvent"?: (event: CustomEvent<void>) => void;
+        /**
+          * This event gets emitted, when the user wants to delete the current Task. It emits the taskId. This component does NOT include a second dialog, which confirms the users choice to delete the task. Please make sure your application includes a PopUp to confirm, if the user actually wants to delete the task.
+         */
         "onDeleteEvent"?: (event: CustomEvent<string>) => void;
+        /**
+          * This event gets emitted, when the user wants to open the task to work on it. It emits the taskId.
+         */
         "onOpenTaskEvent"?: (event: CustomEvent<string>) => void;
+        /**
+          * This event gets emitted, when the user saves the Task. It emits the Task, that should be saved.
+         */
         "onSaveEvent"?: (event: CustomEvent<Task>) => void;
+        /**
+          * The task, which should be displayed
+         */
         "task"?: Task;
     }
     interface TaskSearch {
+        /**
+          * This event gets emitted, when the "Add" button has been pressed.
+         */
         "onAddTaskEvent"?: (event: CustomEvent<void>) => void;
+        /**
+          * This event gets emitted, when a user has pressed the "Search" button. It emits a TaskFilterOptions object, which contains all the parameters for the specified search.
+         */
         "onSearchTasksEvent"?: (event: CustomEvent<TaskFilterOptions>) => void;
+        /**
+          * A list of existing Workbaskets, which the user is allowed to access. this list gets used to display a dropdown for easier filtering by Workbasket
+         */
         "workbaskets"?: Workbasket[];
     }
     interface IntrinsicElements {
