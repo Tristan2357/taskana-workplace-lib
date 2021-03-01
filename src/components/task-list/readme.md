@@ -7,10 +7,12 @@
 
 ## Properties
 
-| Property     | Attribute     | Description | Type     | Default     |
-| ------------ | ------------- | ----------- | -------- | ----------- |
-| `selectedId` | `selected-id` |             | `string` | `undefined` |
-| `tasks`      | --            |             | `Task[]` | `undefined` |
+| Property         | Attribute         | Description | Type     | Default     |
+| ---------------- | ----------------- | ----------- | -------- | ----------- |
+| `orangePriority` | `orange-priority` |             | `number` | `15`        |
+| `redPriority`    | `red-priority`    |             | `number` | `5`         |
+| `selectedId`     | `selected-id`     |             | `string` | `undefined` |
+| `tasks`          | --                |             | `Task[]` | `undefined` |
 
 
 ## Events
