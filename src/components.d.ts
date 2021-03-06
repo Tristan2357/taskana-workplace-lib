@@ -33,9 +33,9 @@ export namespace Components {
     }
     interface TaskOpenButtonbar {
         /**
-          * The current Task, this is used to get context for the events
+          * The name of the current Task
          */
-        "task": Task;
+        "taskName": string;
         /**
           * The list of to the user available workbaskets. This is used to provide a dropdown to transfer the task to another workbasket.
          */
@@ -142,17 +142,17 @@ declare namespace LocalJSX {
          */
         "onBack"?: (event: CustomEvent<void>) => void;
         /**
-          * This event gets emitted, when the user marks the current task as completed. It emits the taskId of the completed task.
+          * This event gets emitted, when the user marks the current task as completed.
          */
-        "onCompleteTask"?: (event: CustomEvent<string>) => void;
+        "onCompleteTask"?: (event: CustomEvent<void>) => void;
         /**
-          * This event gets emitted,when the user wants to transfer the task to another workbasket. It emits an object, which contains the taskId and the workbasketId, to which the task should be transferred to.
+          * This event gets emitted,when the user wants to transfer the task to another workbasket. It emits the workbasketId, to which the task should be transferred to.
          */
-        "onTransferTask"?: (event: CustomEvent<{ taskId: string, workbasketId: string }>) => void;
+        "onTransferTask"?: (event: CustomEvent<string>) => void;
         /**
-          * The current Task, this is used to get context for the events
+          * The name of the current Task
          */
-        "task"?: Task;
+        "taskName"?: string;
         /**
           * The list of to the user available workbaskets. This is used to provide a dropdown to transfer the task to another workbasket.
          */

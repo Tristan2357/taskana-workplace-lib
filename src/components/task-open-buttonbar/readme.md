@@ -9,19 +9,19 @@ This component displays a buttonbar, when working on a task.
 
 ## Properties
 
-| Property      | Attribute | Description                                                                                                                   | Type           | Default     |
-| ------------- | --------- | ----------------------------------------------------------------------------------------------------------------------------- | -------------- | ----------- |
-| `task`        | --        | The current Task, this is used to get context for the events                                                                  | `Task`         | `undefined` |
-| `workbaskets` | --        | The list of to the user available workbaskets. This is used to provide a dropdown to transfer the task to another workbasket. | `Workbasket[]` | `undefined` |
+| Property      | Attribute   | Description                                                                                                                   | Type           | Default     |
+| ------------- | ----------- | ----------------------------------------------------------------------------------------------------------------------------- | -------------- | ----------- |
+| `taskName`    | `task-name` | The name of the current Task                                                                                                  | `string`       | `undefined` |
+| `workbaskets` | --          | The list of to the user available workbaskets. This is used to provide a dropdown to transfer the task to another workbasket. | `Workbasket[]` | `undefined` |
 
 
 ## Events
 
-| Event          | Description                                                                                                                                                                                             | Type                                                     |
-| -------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------- |
-| `back`         | This event gets emitted, when the user wants to go leave the current page and return to the preview of the task.                                                                                        | `CustomEvent<void>`                                      |
-| `completeTask` | This event gets emitted, when the user marks the current task as completed. It emits the taskId of the completed task.                                                                                  | `CustomEvent<string>`                                    |
-| `transferTask` | This event gets emitted,when the user wants to transfer the task to another workbasket. It emits an object, which contains the taskId and the workbasketId, to which the task should be transferred to. | `CustomEvent<{ taskId: string; workbasketId: string; }>` |
+| Event          | Description                                                                                                                                                    | Type                  |
+| -------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------- | --------------------- |
+| `back`         | This event gets emitted, when the user wants to go leave the current page and return to the preview of the task.                                               | `CustomEvent<void>`   |
+| `completeTask` | This event gets emitted, when the user marks the current task as completed.                                                                                    | `CustomEvent<void>`   |
+| `transferTask` | This event gets emitted,when the user wants to transfer the task to another workbasket. It emits the workbasketId, to which the task should be transferred to. | `CustomEvent<string>` |
 
 
 ----------------------------------------------

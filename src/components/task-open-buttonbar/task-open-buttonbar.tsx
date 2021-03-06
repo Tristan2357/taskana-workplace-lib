@@ -18,9 +18,9 @@ export class TaskOpenButtonbar {
 
   /**This event gets emitted, when the user wants to go leave the current page and return to the preview of the task.*/
   @Event() back: EventEmitter<void>;
-  /**This event gets emitted, when the user marks the current task as completed. It emits the taskId of the completed task.*/
+  /**This event gets emitted, when the user marks the current task as completed.*/
   @Event() completeTask: EventEmitter<void>;
-  /**This event gets emitted,when the user wants to transfer the task to another workbasket. It emits an object, which contains the taskId and the workbasketId, to which the task should be transferred to.*/
+  /**This event gets emitted,when the user wants to transfer the task to another workbasket. It emits the workbasketId, to which the task should be transferred to.*/
   @Event() transferTask: EventEmitter<string>;
 
   menu!: Menu;
