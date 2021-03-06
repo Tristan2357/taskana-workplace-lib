@@ -44,7 +44,7 @@ export class TaskPreview {
   @Event() close: EventEmitter<void>;
 
   @Watch('task')
-  watchTaskHandler(task) {
+  handleTaskChange(task) {
     this.taskState = { ...task };
     this.taskState.customAttributes = this.taskState.customAttributes || [];
     this.taskState.callbackInfo = this.taskState.callbackInfo || [];
@@ -54,6 +54,7 @@ export class TaskPreview {
   componentDidLoad() {
     this.menu.anchor = this.menuButton;
     this.menu.corner = 'BOTTOM_LEFT';
+    this.handleTaskChange(this.task);
   }
 
   private customFieldsGenerator(): any[] {

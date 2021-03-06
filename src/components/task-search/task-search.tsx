@@ -101,6 +101,7 @@ export class TaskSearch {
     this.workbasketMenu.defaultFocus = 'NONE';
     this.sortMenu.anchor = this.sortButton;
     this.sortMenu.corner = 'BOTTOM_LEFT';
+    this.handleWorkbasketsChange(this.workbaskets);
   }
 
   render() {
