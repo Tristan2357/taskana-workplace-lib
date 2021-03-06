@@ -124,7 +124,7 @@ export class TaskPreview {
             </mwc-list-item>
             <mwc-list-item class='danger' graphic="icon" onClick={() => this.deleteTask.emit(this.taskState.taskId)}>
               <mwc-icon class='danger' slot='graphic'>delete</mwc-icon>
-              Delete Workbasket
+              Delete Task
             </mwc-list-item>
             <mwc-list-item class='grey' graphic="icon" onClick={this.close.emit}>
               <mwc-icon class='grey' slot='graphic'>close</mwc-icon>
