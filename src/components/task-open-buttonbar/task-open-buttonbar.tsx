@@ -49,7 +49,11 @@ export class TaskOpenButtonbar {
                     }} />
         <mwc-menu fixed ref={m => this.menu = m}>
           {this.workbaskets?.map(workbasket =>
-            <mwc-list-item onClick={() => this.transferTask.emit(workbasket.workbasketId)}>
+            <mwc-list-item onClick={() => {
+              const event = this.transferTask.emit(workbasket.workbasketId);
+              this.menu.close();
+              return event;
+            }}>
               {workbasket.name}</mwc-list-item>,
           )}
         </mwc-menu>

@@ -64,7 +64,6 @@ export class TaskSearch {
   @Watch('workbaskets')
   handleWorkbasketsChange(workbaskets: Workbasket[]) {
     this.workbasketNames = workbaskets.map(w => w.name);
-    console.log('wb & wbNames', workbaskets, this.workbasketNames);
   }
 
   @Watch('workbasketSearch')
@@ -102,7 +101,6 @@ export class TaskSearch {
     this.workbasketMenu.defaultFocus = 'NONE';
     this.sortMenu.anchor = this.sortButton;
     this.sortMenu.corner = 'BOTTOM_LEFT';
-    console.log('wb:', this.workbaskets);
   }
 
   render() {
@@ -121,7 +119,6 @@ export class TaskSearch {
                          onInput={e => {
                            this.workbasketMenu.show();
                            this.workbasketSearch = e.target.value;
-                           console.log('wb & wbNames', this.workbaskets, this.workbasketNames);
                          }} />
           <mwc-menu tabindex={-1} fixed ref={m => this.workbasketMenu = m} onSelected={(e: SingleSelectedEvent) => {
             this.workbasketSearch = this.workbasketMenu.items[e.detail.index]?.value || this.workbasketSearch;
