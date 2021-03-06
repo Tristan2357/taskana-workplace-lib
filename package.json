@@ -1,6 +1,6 @@
 {
   "name": "taskana-workplace-lib",
-  "version": "0.1.5",
+  "version": "0.1.6",
   "description": "Taskana Workplace Library",
   "main": "dist/index.cjs.js",
   "module": "dist/custom-elements/index.js",
