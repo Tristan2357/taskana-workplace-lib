@@ -34,14 +34,14 @@ export class TaskPreview {
   @Prop() classifications: ClassificationSummary[];
 
   /** This event gets emitted, when the user saves the Task. It emits the Task, that should be saved.*/
-  @Event() saveEvent: EventEmitter<Task>;
+  @Event() saveTask: EventEmitter<Task>;
   /** This event gets emitted, when the user wants to open the task to work on it. It emits the taskId.*/
-  @Event() openTaskEvent: EventEmitter<string>;
+  @Event() openTask: EventEmitter<string>;
   /** This event gets emitted, when the user wants to delete the current Task. It emits the taskId.
    *  This component does NOT include a second dialog, which confirms the users choice to delete the task. Please make sure your application includes a PopUp to confirm, if the user actually wants to delete the task.*/
-  @Event() deleteEvent: EventEmitter<string>;
+  @Event() deleteTask: EventEmitter<string>;
   /** This event gets emitted, when the user closes the current Task.*/
-  @Event() closeEvent: EventEmitter<void>;
+  @Event() close: EventEmitter<void>;
 
   @Watch('task')
   watchTaskHandler(task) {
@@ -105,9 +105,9 @@ export class TaskPreview {
           <h4>{this.task?.name}</h4>
         </span>
         <div class='flex right'>
-          <mwc-button unelevated label='Save Task' icon='save' trailingIcon onClick={() => this.saveEvent.emit(this.taskState)}/>
+          <mwc-button unelevated label='Save Task' icon='save' trailingIcon onClick={() => this.saveTask.emit(this.taskState)}/>
           <mwc-button outlined label='Open Task' icon='open_in_new'
-                      trailingIcon onClick={() => this.openTaskEvent.emit(this.task.taskId)}/>
+                      trailingIcon onClick={() => this.openTask.emit(this.task.taskId)}/>
           <mwc-button utlined icon='more_vert'
                       trailingIcon
                       ref={b => this.menuButton = b}
@@ -121,11 +121,11 @@ export class TaskPreview {
               <mwc-icon slot='graphic'>undo</mwc-icon>
               Undo Changes
             </mwc-list-item>
-            <mwc-list-item class='danger' graphic="icon" onClick={() => this.deleteEvent.emit(this.taskState.taskId)}>
+            <mwc-list-item class='danger' graphic="icon" onClick={() => this.deleteTask.emit(this.taskState.taskId)}>
               <mwc-icon class='danger' slot='graphic'>delete</mwc-icon>
               Delete Workbasket
             </mwc-list-item>
-            <mwc-list-item class='grey' graphic="icon" onClick={this.closeEvent.emit}>
+            <mwc-list-item class='grey' graphic="icon" onClick={this.close.emit}>
               <mwc-icon class='grey' slot='graphic'>close</mwc-icon>
               Close
             </mwc-list-item>

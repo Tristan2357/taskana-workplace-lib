@@ -12,17 +12,20 @@ import '@material/mwc-menu';
 })
 export class TaskOpenButtonbar {
 
+  // TODO remove Task and remove taskId from events also remove "Event" from events
+
   /** The current Task, this is used to get context for the events*/
   @Prop() task: Task;
   /** The list of to the user available workbaskets. This is used to provide a dropdown to transfer the task to another workbasket.*/
   @Prop() workbaskets: Workbasket[];
 
+
   /**This event gets emitted, when the user wants to go leave the current page and return to the preview of the task.*/
-  @Event() backEvent: EventEmitter<void>;
+  @Event() back: EventEmitter<void>;
   /**This event gets emitted, when the user marks the current task as completed. It emits the taskId of the completed task.*/
-  @Event() completeEvent: EventEmitter<string>;
+  @Event() completeTask: EventEmitter<string>;
   /**This event gets emitted,when the user wants to transfer the task to another workbasket. It emits an object, which contains the taskId and the workbasketId, to which the task should be transferred to.*/
-  @Event() transferEvent: EventEmitter<{ taskId: string, workbasketId: string }>;
+  @Event() transferTask: EventEmitter<{ taskId: string, workbasketId: string }>;
 
   menu!: Menu;
   menuButton!: HTMLElement;
@@ -38,10 +41,10 @@ export class TaskOpenButtonbar {
         <h4>{this.task?.name}</h4>
       </div>
       <div>
-        <mwc-button outlined label='Go back' icon='arrow_back' trailingIcon onClick={this.backEvent.emit} />
+        <mwc-button outlined label='Go back' icon='arrow_back' trailingIcon onClick={this.back.emit} />
 
         <mwc-button unelevated label='Complete Task' icon='check' trailingIcon
-                    onClick={() => this.completeEvent.emit(this.task.taskId)} />
+                    onClick={() => this.completeTask.emit(this.task.taskId)} />
 
         <mwc-button outlined label='Transfer Task' icon='transfer_within_a_station' trailingIcon
                     ref={b => this.menuButton = b}
@@ -50,7 +53,7 @@ export class TaskOpenButtonbar {
                     }} />
         <mwc-menu fixed ref={m => this.menu = m}>
           {this.workbaskets?.map(workbasket =>
-            <mwc-list-item onClick={() => this.transferEvent.emit({
+            <mwc-list-item onClick={() => this.transferTask.emit({
               taskId: this.task.taskId,
               workbasketId: workbasket.workbasketId,
             })}>{workbasket.name}</mwc-list-item>,

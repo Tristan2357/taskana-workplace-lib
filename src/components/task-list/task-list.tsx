@@ -20,7 +20,7 @@ export class TaskList {
   @Prop() orangePriority: number = 15;
 
   /** This event gets emitted, when the user selects a task. It emits the taskId of the selected task.*/
-  @Event() selectedIdChange: EventEmitter<string>;
+  @Event() selectTask: EventEmitter<string>;
 
   @Listen('selectedIdChange') idChangeHandler(event: CustomEvent) {
     this.selectedId = event.detail;
@@ -31,7 +31,7 @@ export class TaskList {
       <mwc-list activatable>
         {this.tasks?.map((task: Task) =>
           <mwc-list-item twoline graphic='icon' class={task.taskId == this.selectedId ? 'selected' : ''}
-                         onClick={() => this.selectedIdChange.emit(task.taskId)}>
+                         onClick={() => this.selectTask.emit(task.taskId)}>
             <span>{task.name}<i>{task.owner ? ', ' + task.owner : ''}</i></span>
             <span slot='secondary'>{task.state} &nbsp; Due: {task.due}</span>
             <span

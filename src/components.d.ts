@@ -115,7 +115,7 @@ declare namespace LocalJSX {
         /**
           * This event gets emitted, when the user selects a task. It emits the taskId of the selected task.
          */
-        "onSelectedIdChange"?: (event: CustomEvent<string>) => void;
+        "onSelectTask"?: (event: CustomEvent<string>) => void;
         /**
           * This number specifies the priority under which (inclusive) tasks will get a orange badge.
          */
@@ -140,15 +140,15 @@ declare namespace LocalJSX {
         /**
           * This event gets emitted, when the user wants to go leave the current page and return to the preview of the task.
          */
-        "onBackEvent"?: (event: CustomEvent<void>) => void;
+        "onBack"?: (event: CustomEvent<void>) => void;
         /**
           * This event gets emitted, when the user marks the current task as completed. It emits the taskId of the completed task.
          */
-        "onCompleteEvent"?: (event: CustomEvent<string>) => void;
+        "onCompleteTask"?: (event: CustomEvent<string>) => void;
         /**
           * This event gets emitted,when the user wants to transfer the task to another workbasket. It emits an object, which contains the taskId and the workbasketId, to which the task should be transferred to.
          */
-        "onTransferEvent"?: (event: CustomEvent<{ taskId: string, workbasketId: string }>) => void;
+        "onTransferTask"?: (event: CustomEvent<{ taskId: string, workbasketId: string }>) => void;
         /**
           * The current Task, this is used to get context for the events
          */
@@ -172,19 +172,19 @@ declare namespace LocalJSX {
         /**
           * This event gets emitted, when the user closes the current Task.
          */
-        "onCloseEvent"?: (event: CustomEvent<void>) => void;
+        "onClose"?: (event: CustomEvent<void>) => void;
         /**
           * This event gets emitted, when the user wants to delete the current Task. It emits the taskId. This component does NOT include a second dialog, which confirms the users choice to delete the task. Please make sure your application includes a PopUp to confirm, if the user actually wants to delete the task.
          */
-        "onDeleteEvent"?: (event: CustomEvent<string>) => void;
+        "onDeleteTask"?: (event: CustomEvent<string>) => void;
         /**
           * This event gets emitted, when the user wants to open the task to work on it. It emits the taskId.
          */
-        "onOpenTaskEvent"?: (event: CustomEvent<string>) => void;
+        "onOpenTask"?: (event: CustomEvent<string>) => void;
         /**
           * This event gets emitted, when the user saves the Task. It emits the Task, that should be saved.
          */
-        "onSaveEvent"?: (event: CustomEvent<Task>) => void;
+        "onSaveTask"?: (event: CustomEvent<Task>) => void;
         /**
           * The task, which should be displayed
          */
@@ -194,11 +194,11 @@ declare namespace LocalJSX {
         /**
           * This event gets emitted, when the "Add" button has been pressed.
          */
-        "onAddTaskEvent"?: (event: CustomEvent<void>) => void;
+        "onAddTask"?: (event: CustomEvent<void>) => void;
         /**
           * This event gets emitted, when a user has pressed the "Search" button. It emits a TaskFilterOptions object, which contains all the parameters for the specified search.
          */
-        "onSearchTasksEvent"?: (event: CustomEvent<TaskFilterOptions>) => void;
+        "onSearchTasks"?: (event: CustomEvent<TaskFilterOptions>) => void;
         /**
           * A list of existing Workbaskets, which the user is allowed to access. this list gets used to display a dropdown for easier filtering by Workbasket
          */

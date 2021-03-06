@@ -29,10 +29,10 @@ This component is responsible for displaying the filter and sorting options when
 
 ## Events
 
-| Event              | Description                                                                                                                                                            | Type                             |
-| ------------------ | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------- | -------------------------------- |
-| `addTaskEvent`     | This event gets emitted, when the "Add" button has been pressed.                                                                                                       | `CustomEvent<void>`              |
-| `searchTasksEvent` | This event gets emitted, when a user has pressed the "Search" button. It emits a TaskFilterOptions object, which contains all the parameters for the specified search. | `CustomEvent<TaskFilterOptions>` |
+| Event         | Description                                                                                                                                                            | Type                             |
+| ------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------- | -------------------------------- |
+| `addTask`     | This event gets emitted, when the "Add" button has been pressed.                                                                                                       | `CustomEvent<void>`              |
+| `searchTasks` | This event gets emitted, when a user has pressed the "Search" button. It emits a TaskFilterOptions object, which contains all the parameters for the specified search. | `CustomEvent<TaskFilterOptions>` |
 
 
 ----------------------------------------------

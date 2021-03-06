@@ -17,11 +17,11 @@ This component displays a buttonbar, when working on a task.
 
 ## Events
 
-| Event           | Description                                                                                                                                                                                             | Type                                                     |
-| --------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------- |
-| `backEvent`     | This event gets emitted, when the user wants to go leave the current page and return to the preview of the task.                                                                                        | `CustomEvent<void>`                                      |
-| `completeEvent` | This event gets emitted, when the user marks the current task as completed. It emits the taskId of the completed task.                                                                                  | `CustomEvent<string>`                                    |
-| `transferEvent` | This event gets emitted,when the user wants to transfer the task to another workbasket. It emits an object, which contains the taskId and the workbasketId, to which the task should be transferred to. | `CustomEvent<{ taskId: string; workbasketId: string; }>` |
+| Event          | Description                                                                                                                                                                                             | Type                                                     |
+| -------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------- |
+| `back`         | This event gets emitted, when the user wants to go leave the current page and return to the preview of the task.                                                                                        | `CustomEvent<void>`                                      |
+| `completeTask` | This event gets emitted, when the user marks the current task as completed. It emits the taskId of the completed task.                                                                                  | `CustomEvent<string>`                                    |
+| `transferTask` | This event gets emitted,when the user wants to transfer the task to another workbasket. It emits an object, which contains the taskId and the workbasketId, to which the task should be transferred to. | `CustomEvent<{ taskId: string; workbasketId: string; }>` |
 
 
 ----------------------------------------------

@@ -55,15 +55,16 @@ export class TaskSearch {
   @Prop() workbaskets: Workbasket[];
 
   /** This event gets emitted, when the "Add" button has been pressed.*/
-  @Event() addTaskEvent: EventEmitter<void>;
+  @Event() addTask: EventEmitter<void>;
 
   /** This event gets emitted, when a user has pressed the "Search" button.
    * It emits a TaskFilterOptions object, which contains all the parameters for the specified search.*/
-  @Event() searchTasksEvent: EventEmitter<TaskFilterOptions>;
+  @Event() searchTasks: EventEmitter<TaskFilterOptions>;
 
   @Watch('workbaskets')
   handleWorkbasketsChange(workbaskets: Workbasket[]) {
     this.workbasketNames = workbaskets.map(w => w.name);
+    console.log('wb & wbNames', workbaskets, this.workbasketNames);
   }
 
   @Watch('workbasketSearch')
@@ -84,8 +85,7 @@ export class TaskSearch {
       'sort-by': this.sortBy,
       order: this.order,
     };
-    console.log(taskFilterOptions);
-    this.searchTasksEvent.emit(taskFilterOptions);
+    this.searchTasks.emit(taskFilterOptions);
   }
 
   private handleSortingParams() {
@@ -102,13 +102,14 @@ export class TaskSearch {
     this.workbasketMenu.defaultFocus = 'NONE';
     this.sortMenu.anchor = this.sortButton;
     this.sortMenu.corner = 'BOTTOM_LEFT';
+    console.log('wb:', this.workbaskets);
   }
 
   render() {
     return <div>
       <div class='flex breathing lots'>
         <div class='flex column'>
-          <mwc-button unelevated label='Add' icon='add' trailingIcon onClick={this.addTaskEvent} />
+          <mwc-button unelevated label='Add' icon='add' trailingIcon onClick={this.addTask.emit} />
           <mwc-button outlined onClick={() => this.expandedFilter = !this.expandedFilter}>
             <mwc-icon>keyboard_arrow_{this.expandedFilter ? 'up' : 'down'}</mwc-icon>
           </mwc-button>
@@ -118,8 +119,9 @@ export class TaskSearch {
                          value={this.workbasketSearch}
                          ref={t => this.workbasketTextField = t}
                          onInput={e => {
-                           this.workbasketMenu.open = true;
+                           this.workbasketMenu.show();
                            this.workbasketSearch = e.target.value;
+                           console.log('wb & wbNames', this.workbaskets, this.workbasketNames);
                          }} />
           <mwc-menu tabindex={-1} fixed ref={m => this.workbasketMenu = m} onSelected={(e: SingleSelectedEvent) => {
             this.workbasketSearch = this.workbasketMenu.items[e.detail.index]?.value || this.workbasketSearch;

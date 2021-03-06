@@ -19,9 +19,9 @@ This component displays a list of tasks.
 
 ## Events
 
-| Event              | Description                                                                                      | Type                  |
-| ------------------ | ------------------------------------------------------------------------------------------------ | --------------------- |
-| `selectedIdChange` | This event gets emitted, when the user selects a task. It emits the taskId of the selected task. | `CustomEvent<string>` |
+| Event        | Description                                                                                      | Type                  |
+| ------------ | ------------------------------------------------------------------------------------------------ | --------------------- |
+| `selectTask` | This event gets emitted, when the user selects a task. It emits the taskId of the selected task. | `CustomEvent<string>` |
 
 
 ----------------------------------------------
