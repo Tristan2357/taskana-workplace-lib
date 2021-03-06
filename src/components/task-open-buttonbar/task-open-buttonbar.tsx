@@ -12,8 +12,6 @@ import '@material/mwc-menu';
 })
 export class TaskOpenButtonbar {
 
-  // TODO remove Task and remove taskId from events also remove "Event" from events
-
   /** The current Task, this is used to get context for the events*/
   @Prop() task: Task;
   /** The list of to the user available workbaskets. This is used to provide a dropdown to transfer the task to another workbasket.*/
