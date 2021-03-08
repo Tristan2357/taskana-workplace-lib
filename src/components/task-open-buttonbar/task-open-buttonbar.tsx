@@ -32,11 +32,11 @@ export class TaskOpenButtonbar {
   }
 
   render() {
-    return <div class='flex'>
-      <div>
+    return <div class='flex head'>
+      <span>
         <h4>{this.taskName}</h4>
-      </div>
-      <div>
+      </span>
+      <div class='flex right'>
         <mwc-button outlined label='Go back' icon='arrow_back' trailingIcon onClick={this.back.emit} />
 
         <mwc-button unelevated label='Complete Task' icon='check' trailingIcon
